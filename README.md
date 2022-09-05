@@ -6,7 +6,8 @@
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
 
 # CLLocation+Codable
-A wrapper for CLLocation for encoding and decoding CLLocation
+## Vision
+A simple-to-use wrapper for CLLocation for encoding and decoding CLLocation.
 
 ## Motivation
 
@@ -20,7 +21,7 @@ Enjoy!
 P.S. Check the [tests](https://github.com/yonivav/CLLocationWrapper/blob/master/Tests/CLLocationWrapperTests/CLLocationWrapperTests.swift) to see how it works and how to use CLLocationWrapper.
 
 ## Demo
-Lets say you have a location:
+Let's say you have a location:
 ```swift
 import CoreLocation
 
@@ -39,12 +40,12 @@ let locationWrapper = CLLocationWrapper(location: location)
 ```
 and voilà! it's serialized!
 
-Now you can send it to server, save in User Defaults or write it to Data base:
+Now you can send it to a server, save it in User Defaults, or write it to a database:
 ```swift
 let jsonEncoder = JSONEncoder()
 do {
     let encodedLocationWrapper = try jsonEncoder.encode(locationWrapper.location)
-    // Do what ever you want with the wrapped location
+    // Do whatever you want with the wrapped location
 } catch {
     print("Error! Location wrapper encode failed: '\(error)'")
 }
@@ -57,7 +58,7 @@ Very simple:
 let jsonDecoder = JSONDecoder()
 do {
     let decodedLocationWrapper = try jsonDecoder.decode(CLLocationWrapper.self, from: encodedLocationWrapper)
-    // Do what ever you want with the wrapped location
+    // Do whatever you want with the wrapped location
 } catch {
     print("Error! Location wrapper decode failed: '\(error)'")
 }
@@ -88,3 +89,9 @@ dependencies: [
 ### Manually
 
 If you prefer not to use any of the mentioned dependency managers, you can integrate CLLocationWrapper into your project manually.
+
+## Contribution
+You can contribute by adding new features, clarify the current code or fixing bugs. To do so, open a PR. When submitting a pull request, please add tests and ensure your changes don't break any existing tests.
+
+## Credits
+This repository was Inspired by this [gist](https://gist.github.com/hishma/7be2361888859e94cd0a898bb33c1383)
